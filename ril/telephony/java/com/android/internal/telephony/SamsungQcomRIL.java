@@ -33,6 +33,7 @@ import com.android.internal.telephony.cdma.CdmaInformationRecords.CdmaSignalInfo
 import com.android.internal.telephony.cdma.SignalToneUtil;
 import com.android.internal.telephony.uicc.IccCardApplicationStatus;
 import com.android.internal.telephony.uicc.IccCardStatus;
+import com.android.internal.telephony.uicc.IccUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -97,7 +98,7 @@ public class SamsungQcomRIL extends RIL {
 
     @Override
     protected Object
-    responseIccCardStatus(Parcel p) {
+    responseIccCardStatus(Parcel p, int type) {
         IccCardApplicationStatus appStatus = null;
 
         IccCardStatus cardStatus = new IccCardStatus();
@@ -320,7 +321,7 @@ public class SamsungQcomRIL extends RIL {
 
     @Override
     protected void
-    processUnsolicited (Parcel p) {
+    processUnsolicited (Parcel p, int type) {
         Object ret;
         int dataPosition = p.dataPosition(); // save off position within the Parcel
         int response = p.readInt();
@@ -336,7 +337,7 @@ public class SamsungQcomRIL extends RIL {
             p.writeInt(newResponse);
         }
         p.setDataPosition(dataPosition);
-        super.processUnsolicited(p);
+        super.processUnsolicited(p, int type);
     }
 
     @Override

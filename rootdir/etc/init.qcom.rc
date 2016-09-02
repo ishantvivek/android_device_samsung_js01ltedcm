@@ -1065,6 +1065,14 @@ on charger
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system ro wait noatime
     exec /system/bin/lpm
 
+service ril-daemon /system/bin/rild
+    class main
+    socket rild stream 660 root radio
+    socket sap_uim_socket1 stream 660 bluetooth bluetooth
+    socket rild-debug stream 660 radio system
+    user root
+    group radio cache inet misc audio log qcom_diag
+
 service hcidump /system/bin/sh /system/etc/hcidump.sh
     user bluetooth
     group bluetooth system net_bt_admin net_admin

@@ -52,6 +52,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
    ro.nfc.port=I2C
 
+# Storage
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
+
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=false \

@@ -98,7 +98,7 @@ public class SamsungQcomRIL extends RIL {
 
     @Override
     protected Object
-    responseIccCardStatus(Parcel p, int type) {
+    responseIccCardStatus(Parcel p) {
         IccCardApplicationStatus appStatus = null;
 
         IccCardStatus cardStatus = new IccCardStatus();
@@ -337,7 +337,7 @@ public class SamsungQcomRIL extends RIL {
             p.writeInt(newResponse);
         }
         p.setDataPosition(dataPosition);
-        super.processUnsolicited(p, int type);
+        super.processUnsolicited(p, type);
     }
 
     @Override
@@ -374,7 +374,7 @@ public class SamsungQcomRIL extends RIL {
 
     @Override
     protected RILRequest
-    processSolicited (Parcel p) {
+    processSolicited (Parcel p, int type) {
         int serial, error;
         boolean found = false;
         int dataPosition = p.dataPosition(); // save off position within the Parcel
@@ -409,7 +409,7 @@ public class SamsungQcomRIL extends RIL {
             /* Nothing we care about, go up */
             p.setDataPosition(dataPosition);
             // Forward responses that we are not overriding to the super class
-            return super.processSolicited(p);
+            return super.processSolicited(p, type);
         }
         rr = findAndRemoveRequestFromList(serial);
         if (rr == null) {

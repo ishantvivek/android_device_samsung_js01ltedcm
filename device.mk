@@ -112,9 +112,6 @@ PRODUCT_PACKAGES += \
 #    Tag \
 #    com.android.nfc_extras
 
-PRODUCT_PACKAGES += \
-    busybox
-
 # Input device
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc

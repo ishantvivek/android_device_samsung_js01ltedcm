@@ -1116,6 +1116,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 service macloader /system/bin/macloader
     class main
     oneshot
+    seclabel u:r:macloader:s0
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd

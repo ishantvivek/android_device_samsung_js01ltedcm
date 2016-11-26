@@ -134,7 +134,6 @@ lib/D13QS_libchromatix_imx135_uhd_video.so
 lib/D13QS_libchromatix_imx135_zslshot.so
 lib/drm/libdrmwvmplugin.so
 lib/hw/camera.msm8974.so
-lib/hw/consumerir.default.so
 lib/hw/gps.default.so
 lib/hw/sensorhubs.msm8974.so
 lib/hw/sensors.msm8974.so

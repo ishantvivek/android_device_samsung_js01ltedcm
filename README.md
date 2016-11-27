@@ -1,4 +1,4 @@
-# CM-13.0 device configuration for Samsung Galaxy J (SC-02F) [JS01LTEDCM]
+# CM-14.1 device configuration for Samsung Galaxy J (SC-02F) [JS01LTEDCM]
 
 Basic   | Spec Sheet
 -------:|:-------------------------

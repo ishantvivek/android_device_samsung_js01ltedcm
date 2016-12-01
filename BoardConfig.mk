@@ -82,9 +82,6 @@ TARGET_USE_SDCLANG := true
 # CPU
 ENABLE_CPUSETS := true
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # IR Blaster
 BOARD_USES_MS_IR_SIGNAL := true
 

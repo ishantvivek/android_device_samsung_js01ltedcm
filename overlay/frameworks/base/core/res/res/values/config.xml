@@ -273,26 +273,6 @@
 
     <bool name="config_enableWifiDisplay">true</bool>
 
-    <!-- Indicate whether closing the lid causes the device to go to sleep and opening
-         it causes the device to wake up.
-         The default is false. -->
-    <bool name="config_lidControlsSleep">true</bool>
-
-    <!-- Indicate the device's Smart Cover coordinates.
-         If none are provided, then the feature will be disabled.
-         The array should contain 4 values, in pixels, (sample values provided):
-         Top      0
-         Left     100
-         Bottom   Top + 400
-         Right    Display Width - 100
-    -->
-    <!-- <integer-array name="config_smartCoverWindowCoords">
-        <item>30</item>
-        <item>80</item>
-        <item>960</item>
-        <item>1050</item>
-    </integer-array> -->
-
     <!-- The RadioAccessFamilies supported by the device.
          Empty is viewed as "all".  Only used on devices which
          don't support RIL_REQUEST_GET_RADIO_CAPABILITY

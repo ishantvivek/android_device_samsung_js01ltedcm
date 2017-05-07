@@ -25,12 +25,13 @@ TARGET_OTA_ASSERT_DEVICE := js01lte,js01ltedcm,SC02F,SC-02F
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
+# BOARD_CUSTOM_BOOTIMG := true
+# BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
+BOARD_DTBTOOL_ARGS := -2
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
 TARGET_KERNEL_CONFIG := msm8974_sec_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_js01lte_dcm_defconfig
@@ -62,6 +63,9 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 BOARD_HARDWARE_CLASS += device/samsung/js01ltedcm/cmhw
 BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
+# No dexpreopt
+WITH_DEXPREOPT := false
+
 # RIL
 BOARD_RIL_CLASS := ../../../device/samsung/js01ltedcm/ril
 
@@ -82,7 +86,7 @@ ENABLE_CPUSETS := true
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 11534336
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 136314880 # FIXME
+# BOARD_RECOVERYIMAGE_PARTITION_SIZE := 136314880 # FIXME
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2480344064
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 28273097728 # 28273114112 - 16384
 BOARD_CACHEIMAGE_PARTITION_SIZE := 322122752
@@ -135,7 +139,7 @@ TWHAVE_SELINUX := true # NOT A TYPO
 endif
 
 # SELinux
--include device/qcom/sepolicy/sepolicy.mk
+-include device/qcom/sepolicy/Android.mk
 BOARD_SEPOLICY_DIRS += device/samsung/js01ltedcm/sepolicy
 
 # Wifi
@@ -155,3 +159,4 @@ WIFI_DRIVER_FW_PATH_AP      := "/system/etc/wifi/bcmdhd_apsta.bin"
 
 # inherit from the proprietary version
 -include vendor/samsung/js01ltedcm/BoardConfigVendor.mk
+-include device/qcom/common/common.mk

@@ -85,8 +85,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8974 \
     libstlport \
-    libxml2 \
-    Snap
+    libxml2
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -96,12 +95,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf
 
 # Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
-
-# FlipFlap
-PRODUCT_PACKAGES += \
-    FlipFlap
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # IPv6 tethering
 PRODUCT_PACKAGES += \
